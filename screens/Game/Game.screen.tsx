@@ -1,5 +1,7 @@
 import { View } from "react-native";
 
-export const GameScreen = () => {
+type Props = {};
+
+export const GameScreen = (props: Props) => {
   return <View></View>;
 };
