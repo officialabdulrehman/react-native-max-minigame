@@ -2,6 +2,8 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   mainContainer: {
+    justifyContent: "center",
+    alignItems: "center",
     backgroundColor: "#eee",
     padding: 20,
     marginTop: 100,
@@ -20,5 +22,11 @@ export const styles = StyleSheet.create({
     letterSpacing: 1,
     textAlign: "center",
     width: "25%"
+  },
+  buttonsContainer: {
+    flexDirection: "row"
+  },
+  buttonContainer: {
+    flex: 1
   }
 })

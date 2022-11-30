@@ -12,8 +12,14 @@ export const StartGameScreen = (props: Props) => {
         maxLength={2}
         keyboardType="decimal-pad"
       />
-      <CustomButton title="Reset" onPress={() => {}} />
-      <CustomButton title="Confirm" onPress={() => {}} />
+      <View style={styles.buttonsContainer}>
+        <View style={styles.buttonContainer}>
+          <CustomButton title="Reset" onPress={() => {}} />
+        </View>
+        <View style={styles.buttonContainer}>
+          <CustomButton title="Confirm" onPress={() => {}} />
+        </View>
+      </View>
     </View>
   );
 };
