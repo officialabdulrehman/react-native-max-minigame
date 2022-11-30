@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     color: "rgba(83, 196, 247, 1)",
     letterSpacing: 1,
     textAlign: "center",
-    width: "25%"
+    width: 70
   },
   buttonsContainer: {
     flexDirection: "row"
