@@ -3,9 +3,12 @@ import { Alert, TextInput, View } from "react-native";
 import { CustomButton } from "../../components/CustomButton/CustomButton";
 import { styles } from "./StartGame.screen.styles";
 
-type Props = {};
+type Props = {
+  onSubmit: (number: number) => void;
+};
 
 export const StartGameScreen = (props: Props) => {
+  const { onSubmit } = props;
   const [input, setInput] = useState("");
 
   const handleInputChange = (userInput: string) => {
@@ -26,6 +29,7 @@ export const StartGameScreen = (props: Props) => {
       );
       return;
     }
+    onSubmit(parseInt(input));
   };
 
   return (
