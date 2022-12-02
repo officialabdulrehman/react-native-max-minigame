@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
     marginTop: 40,
     marginHorizontal: 80,
+    marginBottom: -100,
   },
   title: {
     // color: "rgba(164,13,40,0.9)",

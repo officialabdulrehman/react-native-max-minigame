@@ -36,4 +36,8 @@ export const styles = StyleSheet.create({
   buttonContainer: {
     flex: 1
   },
+  guessList: {
+    marginTop: 50,
+    flex: 1
+  }
 })

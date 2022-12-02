@@ -25,8 +25,9 @@ export default function App() {
     setNumber(input);
   };
 
-  const handleGameOver = () => {
+  const handleGameOver = (guessCount: number) => {
     setGameOver(true);
+    setTotalGuesses(guessCount);
   };
 
   const handleNewGame = () => {

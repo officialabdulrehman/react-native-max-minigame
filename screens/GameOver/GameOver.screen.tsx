@@ -20,8 +20,9 @@ export const GameOverScreen = (props: Props) => {
         />
       </View>
       <Text style={styles.summary}>
-        Your phone needed <Text style={styles.highlight}>{secretNumber}</Text>{" "}
-        rounds to guess your <Text style={styles.highlight}>{guesses}</Text>
+        Your phone needed <Text style={styles.highlight}>{guesses}</Text> rounds
+        to guess your Secret Number:{" "}
+        <Text style={styles.highlight}>{secretNumber}</Text>
       </Text>
       <CustomButton onPress={startNewGame}>Start New Game</CustomButton>
     </View>

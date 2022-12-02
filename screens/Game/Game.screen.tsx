@@ -1,15 +1,16 @@
 import { Ionicons } from "@expo/vector-icons";
 import { useEffect, useState } from "react";
-import { Alert, Text, View } from "react-native";
+import { Alert, FlatList, Text, View } from "react-native";
 import { Card } from "../../components/Card/Card";
 import { CustomButton } from "../../components/CustomButton/CustomButton";
+import { GuessBubble } from "../../components/Game/GuessBubble/GuessBubble";
 import { NumberBubble } from "../../components/Game/NumberBubble/NumberBubble";
 import { generateRandomNumber } from "../../util/common";
 import { styles } from "./Game.screen.styles";
 
 type Props = {
   secretNumber: number;
-  handleGameOver: () => void;
+  handleGameOver: (number: number) => void;
 };
 
 enum Direction {
@@ -32,13 +33,13 @@ const isLying = (direction: Direction, guess: number, secretNumber: number) => {
 
 export const GameScreen = (props: Props) => {
   const { secretNumber, handleGameOver } = props;
-  const [guess, setGuess] = useState(
-    generateRandomNumber(1, 100, secretNumber)
-  );
+  const initialGuess = generateRandomNumber(1, 100, secretNumber);
+  const [guess, setGuess] = useState(initialGuess);
+  const [guesses, setGuesses] = useState([initialGuess]);
 
   useEffect(() => {
     if (guess === secretNumber) {
-      handleGameOver();
+      handleGameOver(guesses.length);
     }
   }, [guess, secretNumber, handleGameOver]);
 
@@ -64,7 +65,10 @@ export const GameScreen = (props: Props) => {
     const newGuess = generateRandomNumber(min, max, guess);
 
     setGuess(newGuess);
+    setGuesses((prevGuesses) => [newGuess, ...prevGuesses]);
   };
+
+  const guessRoundListLength = guesses.length;
 
   return (
     <View style={styles.container}>
@@ -85,6 +89,18 @@ export const GameScreen = (props: Props) => {
           </View>
         </View>
       </Card>
+      <View style={styles.guessList}>
+        <FlatList
+          data={guesses}
+          renderItem={(itemData) => (
+            <GuessBubble
+              guess={itemData.item}
+              round={guessRoundListLength - itemData.index}
+            />
+          )}
+          keyExtractor={(item) => item.toString()}
+        />
+      </View>
     </View>
   );
 };
