@@ -1,3 +1,4 @@
+import { Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
 import { Text, View } from "react-native";
 import { Card } from "../../components/Card/Card";
@@ -24,10 +25,14 @@ export const GameScreen = (props: Props) => {
         <Text style={styles.promptText}>Higher or Lower ?</Text>
         <View style={styles.buttonsContainer}>
           <View style={styles.buttonContainer}>
-            <CustomButton title="-" onPress={() => {}} />
+            <CustomButton onPress={() => {}}>
+              <Ionicons name="md-remove" size={24} color="white" />
+            </CustomButton>
           </View>
           <View style={styles.buttonContainer}>
-            <CustomButton title="+" onPress={() => {}} />
+            <CustomButton onPress={() => {}}>
+              <Ionicons name="md-remove" size={24} color="white" />
+            </CustomButton>
           </View>
         </View>
       </Card>

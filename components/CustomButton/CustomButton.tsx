@@ -2,12 +2,12 @@ import { Pressable, Text, View } from "react-native";
 import { styles } from "./CustomButton.styles";
 
 type Props = {
-  title: string;
+  children: string | JSX.Element;
   onPress: () => void;
 };
 
 export const CustomButton = (props: Props) => {
-  const { title, onPress } = props;
+  const { children, onPress } = props;
   return (
     <View style={styles.outerContainer}>
       <Pressable
@@ -23,7 +23,7 @@ export const CustomButton = (props: Props) => {
           radius: 200,
         }}
       >
-        <Text style={styles.text}>{title}</Text>
+        <Text style={styles.text}>{children}</Text>
       </Pressable>
     </View>
   );

@@ -47,10 +47,10 @@ export const StartGameScreen = (props: Props) => {
         />
         <View style={styles.buttonsContainer}>
           <View style={styles.buttonContainer}>
-            <CustomButton title="Reset" onPress={handleResetInput} />
+            <CustomButton onPress={handleResetInput}>Rest</CustomButton>
           </View>
           <View style={styles.buttonContainer}>
-            <CustomButton title="Confirm" onPress={handleSubmit} />
+            <CustomButton onPress={handleSubmit}>Confirm</CustomButton>
           </View>
         </View>
       </Card>
