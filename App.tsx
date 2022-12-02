@@ -12,7 +12,7 @@ export default function App() {
   };
 
   let screen = number ? (
-    <GameScreen />
+    <GameScreen secretNumber={1} />
   ) : (
     <StartGameScreen onSubmit={handleInputSubmission} />
   );
@@ -24,6 +24,7 @@ export default function App() {
         resizeMode="cover"
         style={styles.root}
         imageStyle={styles.backgroundImage}
+        blurRadius={0}
       >
         {screen}
       </ImageBackground>

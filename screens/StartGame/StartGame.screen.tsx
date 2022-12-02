@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Alert, TextInput, View } from "react-native";
+import { Alert, Text, TextInput, View } from "react-native";
 import { CustomButton } from "../../components/CustomButton/CustomButton";
 import { styles } from "./StartGame.screen.styles";
 
@@ -34,19 +34,22 @@ export const StartGameScreen = (props: Props) => {
 
   return (
     <View style={styles.mainContainer}>
-      <TextInput
-        style={styles.input}
-        value={input}
-        onChangeText={handleInputChange}
-        maxLength={2}
-        keyboardType="decimal-pad"
-      />
-      <View style={styles.buttonsContainer}>
-        <View style={styles.buttonContainer}>
-          <CustomButton title="Reset" onPress={handleResetInput} />
-        </View>
-        <View style={styles.buttonContainer}>
-          <CustomButton title="Confirm" onPress={handleSubmit} />
+      <Text style={styles.title}>Guess My Number</Text>
+      <View style={styles.inputContainer}>
+        <TextInput
+          style={styles.input}
+          value={input}
+          onChangeText={handleInputChange}
+          maxLength={2}
+          keyboardType="decimal-pad"
+        />
+        <View style={styles.buttonsContainer}>
+          <View style={styles.buttonContainer}>
+            <CustomButton title="Reset" onPress={handleResetInput} />
+          </View>
+          <View style={styles.buttonContainer}>
+            <CustomButton title="Confirm" onPress={handleSubmit} />
+          </View>
         </View>
       </View>
     </View>
