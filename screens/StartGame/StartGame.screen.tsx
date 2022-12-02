@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Alert, Text, TextInput, View } from "react-native";
+import { Card } from "../../components/Card/Card";
 import { CustomButton } from "../../components/CustomButton/CustomButton";
 import { styles } from "./StartGame.screen.styles";
 
@@ -35,7 +36,8 @@ export const StartGameScreen = (props: Props) => {
   return (
     <View style={styles.mainContainer}>
       <Text style={styles.title}>Guess My Number</Text>
-      <View style={styles.inputContainer}>
+      <Card>
+        <Text style={styles.promptText}>Enter the secret number!</Text>
         <TextInput
           style={styles.input}
           value={input}
@@ -51,7 +53,7 @@ export const StartGameScreen = (props: Props) => {
             <CustomButton title="Confirm" onPress={handleSubmit} />
           </View>
         </View>
-      </View>
+      </Card>
     </View>
   );
 };

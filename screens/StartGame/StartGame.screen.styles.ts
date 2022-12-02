@@ -19,15 +19,15 @@ export const styles = StyleSheet.create({
     textShadowOffset: { width: -1, height: 1 },
     textShadowRadius: 10
   },
-  inputContainer: {
-    justifyContent: "center",
-    alignItems: "center",
-    // backgroundColor: "#eee",
-    backgroundColor: "rgba(0, 0, 0, 0.2)",
-    padding: 20,
-    marginHorizontal: 24,
-    borderRadius: 10,
-    marginTop: "50%",
+  promptText: {
+    fontSize: 24,
+    fontWeight: "bold",
+    letterSpacing: 1,
+    color: "rgba(171,6,38, 0.9)",
+    textShadowColor: 'rgba(150, 150, 150, 1)',
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 20,
+    marginBottom: 20
   },
   input: {
     // backgroundColor: "#fff",
