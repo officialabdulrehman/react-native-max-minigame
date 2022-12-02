@@ -66,12 +66,12 @@ export const GameScreen = (props: Props) => {
         <Text style={styles.promptText}>Higher or Lower ?</Text>
         <View style={styles.buttonsContainer}>
           <View style={styles.buttonContainer}>
-            <CustomButton onPress={() => {}}>
+            <CustomButton onPress={() => handleNextGuess(Direction.LOWER)}>
               <Ionicons name="md-remove" size={24} color="white" />
             </CustomButton>
           </View>
           <View style={styles.buttonContainer}>
-            <CustomButton onPress={() => {}}>
+            <CustomButton onPress={() => handleNextGuess(Direction.HIGHER)}>
               <Ionicons name="md-add" size={24} color="white" />
             </CustomButton>
           </View>

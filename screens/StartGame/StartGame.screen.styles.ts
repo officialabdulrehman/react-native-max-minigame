@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: 36,
-    fontWeight: "bold",
+    fontFamily: "open-sans",
     letterSpacing: 1,
     backgroundColor: "rgba(0, 0, 0, 0.2)",
     color: "rgba(171,6,38, 0.9)",
@@ -21,8 +21,8 @@ export const styles = StyleSheet.create({
   },
   promptText: {
     fontSize: 24,
-    fontWeight: "bold",
-    letterSpacing: 1,
+    fontFamily: "open-sans-bold",
+    letterSpacing: 0,
     color: "rgba(171,6,38, 0.9)",
     textShadowColor: 'rgba(150, 150, 150, 1)',
     textShadowOffset: { width: -1, height: 1 },
@@ -46,9 +46,9 @@ export const styles = StyleSheet.create({
     width: 70
   },
   buttonsContainer: {
-    flexDirection: "row"
+    flexDirection: "row",
   },
   buttonContainer: {
-    flex: 1
+    flex: 1,
   }
 })

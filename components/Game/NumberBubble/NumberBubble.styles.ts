@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     // color: "rgba(164,13,40,0.9)",
     color: "rgba(230,7,59,255)",
     fontSize: 36,
-    fontWeight: "bold",
+    fontFamily: "open-sans",
     letterSpacing: 1,
     textShadowColor: 'rgba(150, 150, 150, 1)',
     textShadowOffset: { width: -1, height: 1 },
