@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Text, View } from "react-native";
+import { Card } from "../../components/Card/Card";
+import { CustomButton } from "../../components/CustomButton/CustomButton";
 import { NumberBubble } from "../../components/Game/NumberBubble/NumberBubble";
 import { generateRandomNumber } from "../../util/common";
 import { styles } from "./Game.screen.styles";
@@ -18,9 +20,17 @@ export const GameScreen = (props: Props) => {
     <View style={styles.container}>
       <Text style={styles.title}>Opponent's Guess</Text>
       <NumberBubble title={guess} />
-      <View>
-        <Text>Higher or Lower ?</Text>
-      </View>
+      <Card>
+        <Text style={styles.promptText}>Higher or Lower ?</Text>
+        <View style={styles.buttonsContainer}>
+          <View style={styles.buttonContainer}>
+            <CustomButton title="-" onPress={() => {}} />
+          </View>
+          <View style={styles.buttonContainer}>
+            <CustomButton title="+" onPress={() => {}} />
+          </View>
+        </View>
+      </Card>
     </View>
   );
 };
