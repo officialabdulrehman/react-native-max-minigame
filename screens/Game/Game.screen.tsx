@@ -18,13 +18,13 @@ enum Direction {
 }
 
 let min = 1;
-let max = 1;
+let max = 100;
 
 const isLying = (direction: Direction, guess: number, secretNumber: number) => {
-  if (direction === Direction.LOWER && guess > secretNumber) {
+  if (direction === Direction.LOWER && guess < secretNumber) {
     return true;
   }
-  if (direction === Direction.LOWER && guess > secretNumber) {
+  if (direction === Direction.HIGHER && guess > secretNumber) {
     return true;
   }
   return false;
@@ -42,6 +42,11 @@ export const GameScreen = (props: Props) => {
     }
   }, [guess, secretNumber, handleGameOver]);
 
+  useEffect(() => {
+    min = 1;
+    max = 100;
+  }, []);
+
   const handleNextGuess = (direction: Direction) => {
     if (isLying(direction, guess, secretNumber)) {
       Alert.alert("Baka! You lier!", "You know this is wrong direction!", [
@@ -49,12 +54,15 @@ export const GameScreen = (props: Props) => {
       ]);
       return;
     }
-    const newGuess = generateRandomNumber(min, max, secretNumber);
+
     if (direction === Direction.LOWER) {
       max = guess;
     } else {
       min = guess + 1;
     }
+
+    const newGuess = generateRandomNumber(min, max, guess);
+
     setGuess(newGuess);
   };
 
