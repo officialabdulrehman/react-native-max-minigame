@@ -6,13 +6,18 @@ import { StartGameScreen } from "./screens/StartGame/StartGame.screen";
 
 export default function App() {
   const [number, setNumber] = useState<number | null>(null);
+  const [gameOver, setGameOver] = useState(true);
 
   const handleInputSubmission = (input: number) => {
     setNumber(input);
   };
 
+  const handleGameOver = () => {
+    setGameOver(true);
+  };
+
   let screen = number ? (
-    <GameScreen secretNumber={1} />
+    <GameScreen secretNumber={1} handleGameOver={handleGameOver} />
   ) : (
     <StartGameScreen onSubmit={handleInputSubmission} />
   );
